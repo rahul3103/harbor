@@ -17,13 +17,17 @@ export default function Home({ fallback }) {
 const API = `${process.env.DOMAIN}/api/testnets`;
 
 export async function getStaticProps() {
-  const resp = await fetcher(API);
-  console.log(resp);
-  return {
-    props: {
-      fallback: {
-        "/api/testnets": resp,
+  let resp = {};
+  try {
+    resp = await fetcher(API);
+    return {
+      props: {
+        fallback: {
+          "/api/testnets": resp,
+        },
       },
-    },
-  };
+    };
+  } catch (error) {
+    return { notFound: true };
+  }
 }
