@@ -17,6 +17,7 @@ module.exports = {
           150: "#dddddd",
           175: "#aaaaaa",
           250: "#999999",
+          275: "#666666",
         },
         white: "#ffffff",
         black: {
@@ -61,6 +62,12 @@ module.exports = {
       gridTemplateColumns: {
         panel: "300px auto",
       },
+      gridTemplateRows: {
+        layout: "60px auto",
+      },
+      height: {
+        content: "calc(100vh - 60px)",
+      },
     },
   },
   plugins: [
@@ -69,7 +76,7 @@ module.exports = {
         ".btn": {
           display: "flex",
           alignItems: "center",
-          padding: ".25rem 1rem",
+          padding: ".25rem 0.5rem",
           borderRadius: ".25rem",
           fontWeight: "600",
           "&:hover": {

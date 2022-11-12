@@ -1,9 +1,8 @@
-import Image from "next/image";
-import { formatDistance, subDays } from "date-fns";
 import Settings from "../public/icons/settings.svg";
 import ClockStroke from "../public/icons/clock_stroke.svg";
 import Status from "./Status";
-
+import ImageStacked from "./ImageStacked";
+import { getTimeFrom } from "../utils/tools";
 function getCleanName(name) {
   return name.replaceAll(/-|_/gm, " ");
 }
@@ -19,9 +18,10 @@ function Card({ card }) {
     bgColor = "bg-gray-75";
     borderColor = "border-gray-150";
   }
+
   return (
     <article
-      className={`flex w-full flex-col justify-between space-y-3 rounded-2.5xl border ${borderColor} py-4 pl-4 shadow-card md:py-6 md:px-8 ${bgColor}`}
+      className={`flex w-full flex-col justify-between space-y-3 rounded-2.5xl border py-4 pl-4 shadow-card md:py-6 md:px-8 ${bgColor} ${borderColor}`}
     >
       <div className="items-center justify-between space-y-3 md:flex md:space-y-0">
         <div className="flex gap-4">
@@ -29,17 +29,16 @@ function Card({ card }) {
             {getCleanName(card.name)}
           </span>
           <span className="flex items-center rounded-full bg-gray-130 py-0.5 px-3 text-sm font-semibold text-gray-250	">
-            5321
+            {card.id.substr(-4)}
           </span>
         </div>
         <div className="flex items-center space-x-4">
           <Status status={card.status} />
-
           <span className="text-gray-135">&#183;</span>
-          <div className="flex items-center space-x-1.5 text-blue-50">
+          <button className="btn flex items-center space-x-1.5 text-sm text-blue-50">
             <Settings className="h-3.5 w-3.5" />
             <span className="text-sm font-medium">Settings</span>
-          </div>
+          </button>
         </div>
       </div>
       <div className="items-center justify-between space-y-3 md:flex md:space-y-0">
@@ -51,30 +50,12 @@ function Card({ card }) {
           <span className="text-sm font-medium">
             {card.testnet_chains.length} Blockchain
           </span>
-          <div className="flex -space-x-1 overflow-hidden">
-            {card.testnet_chains.map((token) => (
-              <div
-                className="flex h-7 w-7 items-center justify-center rounded-lg border border-gray-150 bg-white"
-                key={token.chain}
-              >
-                <Image
-                  className="inline-block h-4 w-4"
-                  src={`/images/blockchains/${token.chain}.png`}
-                  alt="token"
-                  width={16}
-                  height={16}
-                />
-              </div>
-            ))}
-          </div>
+          <ImageStacked stacks={card.testnet_chains} />
         </div>
         <div className="flex items-center space-x-1.5 text-gray-250 md:justify-end">
           <ClockStroke className="h-3.5 w-3.5" />
           <span className="text-xs+ font-medium">
-            {`Modified ${formatDistance(new Date(), new Date(card.created_at), {
-              addPrefix: true,
-            })}`}
-            {/* {dayjs(card.created_at).fromNow()} */}
+            {`Modified ${getTimeFrom(card.updated_at)}`}
           </span>
         </div>
       </div>

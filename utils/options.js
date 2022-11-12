@@ -3,8 +3,13 @@ export const sortOptions = [
   { name: "Name A-Z", key: "name", order: "ascending" },
   { name: "Name Z-A", key: "name", order: "descending" },
   { name: "Status", key: "status", order: "ascending" },
-  { name: "Date created", key: "created_at", order: "ascending" },
-  { name: "Last modified", key: "updated_at", order: "ascending" },
+  { name: "Date created", key: "created_at", order: "ascending", kind: "time" },
+  {
+    name: "Last modified",
+    key: "updated_at",
+    order: "ascending",
+    kind: "time",
+  },
 ];
 
 export const filterOptions = [

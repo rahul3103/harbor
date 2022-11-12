@@ -1,3 +1,11 @@
+function getHoursAgo(hour = 0, min = 0, day = 0) {
+  let hoursAgo = new Date();
+  hoursAgo.setHours(hoursAgo.getHours() - hour);
+  hoursAgo.setMinutes(hoursAgo.getMinutes() - min);
+  hoursAgo.setDate(hoursAgo.getDate() - day);
+  return hoursAgo.toISOString();
+}
+
 const data = {
   testnet: [
     {
@@ -6,7 +14,7 @@ const data = {
       status: "RUNNING",
       endpoint: "3.110.142.253",
       created_at: "2022-10-27T09:38:25.870847+00:00",
-      updated_at: "2022-10-27T09:40:45.834821+00:00",
+      updated_at: getHoursAgo(0),
       testnet_off_chain_actors: [
         {
           name: "routerCache",
@@ -27,6 +35,16 @@ const data = {
       testnet_chains: [
         {
           chain: "ethereum",
+          status: "RUNNING",
+          __typename: "testnet_chain",
+        },
+        {
+          chain: "polygon",
+          status: "RUNNING",
+          __typename: "testnet_chain",
+        },
+        {
+          chain: "alchemy",
           status: "RUNNING",
           __typename: "testnet_chain",
         },
@@ -43,8 +61,8 @@ const data = {
       id: "b9e1a987-d4a3-47a4-a019-19844d02f84e",
       status: "RUNNING",
       endpoint: "3.110.193.51",
-      created_at: "2022-10-27T09:37:59.060386+00:00",
-      updated_at: "2022-10-27T09:40:20.534066+00:00",
+      created_at: getHoursAgo(1),
+      updated_at: getHoursAgo(0, 10),
       testnet_off_chain_actors: [
         {
           name: "routerCache",
@@ -55,6 +73,21 @@ const data = {
       testnet_chains: [
         {
           chain: "polygon",
+          status: "RUNNING",
+          __typename: "testnet_chain",
+        },
+        {
+          chain: "ethereum",
+          status: "RUNNING",
+          __typename: "testnet_chain",
+        },
+        {
+          chain: "alchemy",
+          status: "RUNNING",
+          __typename: "testnet_chain",
+        },
+        {
+          chain: "optimism",
           status: "RUNNING",
           __typename: "testnet_chain",
         },
@@ -71,8 +104,8 @@ const data = {
       id: "44b4eaf7-f439-43fb-ac49-ec03a34133d4",
       status: "RUNNING",
       endpoint: "15.207.106.215",
-      created_at: "2022-10-27T09:37:06.367679+00:00",
-      updated_at: "2022-10-27T09:39:36.212997+00:00",
+      created_at: getHoursAgo(2),
+      updated_at: getHoursAgo(0, 20),
       testnet_off_chain_actors: [
         {
           name: "routerCache",
@@ -93,6 +126,11 @@ const data = {
       testnet_chains: [
         {
           chain: "ethereum",
+          status: "RUNNING",
+          __typename: "testnet_chain",
+        },
+        {
+          chain: "arbitrum",
           status: "RUNNING",
           __typename: "testnet_chain",
         },
@@ -110,7 +148,7 @@ const data = {
       status: "RUNNING",
       endpoint: "3.108.41.18",
       created_at: "2022-10-27T09:33:03.17475+00:00",
-      updated_at: "2022-10-27T09:35:22.614039+00:00",
+      updated_at: getHoursAgo(0, 40),
       testnet_off_chain_actors: [
         {
           name: "ipfs",
@@ -132,7 +170,7 @@ const data = {
       status: "STOPPED",
       endpoint: "13.126.17.254",
       created_at: "2022-10-27T09:10:26.589076+00:00",
-      updated_at: "2022-10-27T09:27:10.180768+00:00",
+      updated_at: getHoursAgo(0, 0, 2),
       testnet_off_chain_actors: [
         {
           name: "routerCache",
@@ -156,6 +194,11 @@ const data = {
           status: "STOPPED",
           __typename: "testnet_chain",
         },
+        {
+          chain: "fantom",
+          status: "STOPPED",
+          __typename: "testnet_chain",
+        },
       ],
       testnet_image: {
         project_id: "763db951-01d2-455e-8c45-08b839f2248b",
@@ -170,7 +213,7 @@ const data = {
       status: "STOPPED",
       endpoint: "35.154.227.230",
       created_at: "2022-10-27T09:10:00.379698+00:00",
-      updated_at: "2022-10-27T09:31:20.021792+00:00",
+      updated_at: getHoursAgo(1),
       testnet_off_chain_actors: [
         {
           name: "sequencerCache",
@@ -208,7 +251,7 @@ const data = {
       status: "RUNNING",
       endpoint: "13.233.25.45",
       created_at: "2022-10-27T09:09:18.632011+00:00",
-      updated_at: "2022-10-27T09:11:41.364544+00:00",
+      updated_at: getHoursAgo(2),
       testnet_off_chain_actors: [
         {
           name: "routerCache",

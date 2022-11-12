@@ -21,7 +21,7 @@ const navigations = [...navigationLeft, ...navigationRight];
 
 export default function NavBar() {
   return (
-    <Disclosure as="nav" className="bg-black-100">
+    <Disclosure as="nav" className="sticky top-0 z-10 col-span-2 bg-black-100 ">
       {({ open }) => (
         <>
           <div className="mx-auto px-2 sm:px-6 lg:px-5">

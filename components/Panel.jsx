@@ -7,6 +7,7 @@ import Add from "../public/icons/add.svg";
 import Clone from "../public/icons/clone.svg";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import useMenuStore from "../store/menu";
+import Batch from "./Batch";
 
 function Panel({ onDrawer }) {
   const { toggleMobileDrawer } = useMenuStore((state) => state);
@@ -15,7 +16,7 @@ function Panel({ onDrawer }) {
     <aside
       className={`${
         onDrawer ? "block" : "hidden"
-      } border-r border-solid border-gray-150 lg:block`}
+      } sticky top-15 h-content border-r border-solid border-gray-150 bg-white lg:block `}
     >
       <div className="flex justify-between border-b border-solid border-gray-150 py-1 pr-5">
         <button className="btn ml-4 gap-3 px-2 text-gray-250">
@@ -44,31 +45,27 @@ function Panel({ onDrawer }) {
         </div>
         <ul className="space-y-1 px-3 py-2 text-black-0">
           <li>
-            <a className="flex items-center gap-3 rounded-lg bg-gray-75 py-2 pl-9 pr-5">
+            <a className="flex cursor-pointer items-center gap-3 rounded-lg bg-gray-75 py-2 pl-9 pr-5 text-blue-50">
               <Testnets className="w-4" />
-              <div className="flex flex-1 items-center gap-1.5">
-                <span>Testnets</span>
-                <span className="flex h-5 w-6 items-center rounded-full border border-gray-125 bg-white py-1 px-2 text-xs">
-                  8
-                </span>
+              <div className="flex flex-1 items-center gap-1.5 ">
+                <span className="text-sm font-semibold ">Testnets</span>
+                <Batch active>8</Batch>
               </div>
               <Add className="w-4 text-gray-175" />
             </a>
           </li>
           <li>
-            <a className="flex items-center gap-3 rounded-lg py-2 pl-9 pr-5 hover:bg-gray-75">
+            <a className="flex cursor-pointer	 items-center gap-3 rounded-lg py-2 pl-9 pr-5 hover:bg-gray-75">
               <Members className="w-4" />
               <div className="flex flex-1 items-center gap-1.5">
                 <span>Members</span>
-                <span className="flex h-5 w-6 items-center rounded-full border border-gray-125 bg-white py-1 px-2 text-xs">
-                  1
-                </span>
+                <Batch>1</Batch>
               </div>
               <Add className="w-4 text-gray-175" />
             </a>
           </li>
           <li>
-            <a className="flex items-center gap-3 rounded-lg py-2 pl-9 pr-5 hover:bg-gray-75">
+            <a className="flex cursor-pointer	 items-center gap-3 rounded-lg py-2 pl-9 pr-5 hover:bg-gray-75">
               <ProjectKey className="w-4" />
               <div className="flex flex-1 items-center gap-1.5">
                 <span>Project Key</span>

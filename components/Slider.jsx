@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Panel from "./Panel";
+import Navbar from "../components/Navbar";
 import Container from "./Container";
 import useMenuStore from "../store/menu";
 
@@ -8,7 +9,7 @@ export default function Slider() {
   const { mobileDrawer, toggleMobileDrawer } = useMenuStore((state) => state);
 
   return (
-    <div className="flex-1 bg-white">
+    <>
       <Transition.Root show={mobileDrawer} as={Fragment}>
         <Dialog
           as="div"
@@ -33,12 +34,11 @@ export default function Slider() {
         </Dialog>
       </Transition.Root>
 
-      <main className="h-full">
-        <div className="grid min-h-full grid-cols-1 lg:grid-cols-panel">
-          <Panel />
-          <Container />
-        </div>
+      <main className="grid h-full grid-cols-1 grid-rows-layout bg-white lg:grid-cols-panel">
+        <Navbar />
+        <Panel />
+        <Container />
       </main>
-    </div>
+    </>
   );
 }
