@@ -33,8 +33,7 @@ export default function Slider() {
           </div>
         </Dialog>
       </Transition.Root>
-
-      <main className="grid h-full grid-cols-1 grid-rows-layout bg-white lg:grid-cols-panel">
+      <main className="grid h-full grid-cols-1 bg-white lg:grid-cols-panel">
         <Navbar />
         <Panel />
         <Container />

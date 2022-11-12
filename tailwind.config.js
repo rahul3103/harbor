@@ -62,9 +62,6 @@ module.exports = {
       gridTemplateColumns: {
         panel: "300px auto",
       },
-      gridTemplateRows: {
-        layout: "60px auto",
-      },
       height: {
         content: "calc(100vh - 60px)",
       },
