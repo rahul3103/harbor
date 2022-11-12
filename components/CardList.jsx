@@ -7,7 +7,7 @@ import { filterOptions, sortOptions } from "../utils/options";
 function filterCards(cards, value) {
   const option = filterOptions[value];
   if (!option.key) return cards;
-  cards.filter((card) => card[option.key] === option.val);
+  return cards.filter((card) => card[option.key] === option.val);
 }
 
 function sortCards(cards, value) {
@@ -30,9 +30,8 @@ function CardList() {
   const testnets = data.data.testnet;
   let filteredCards = [...testnets];
   const { filtervalue, sortValue } = useMenuStore((state) => state);
-  if (sortOptions[sortValue].order) {
-    sortCards(filterCards(filteredCards, filtervalue), sortValue);
-  }
+  sortCards(filteredCards, sortValue);
+  filteredCards = filterCards(filteredCards, filtervalue);
 
   return (
     <div className="space-y-6">
