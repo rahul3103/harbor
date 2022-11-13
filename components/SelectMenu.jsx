@@ -39,7 +39,7 @@ export default function SelectMenu({ options, title, onUpdate, selected }) {
                     className={classNames(
                       index === selected ? "bg-gray-130" : "",
                       active ? "bg-gray-130" : "",
-                      "block rounded-lg px-4 py-2 text-sm font-semibold text-black-555"
+                      "block cursor-pointer rounded-lg px-4 py-2 text-sm font-semibold text-black-555"
                     )}
                   >
                     {option.name || option}
