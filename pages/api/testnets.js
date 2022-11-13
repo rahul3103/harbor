@@ -6,6 +6,10 @@ function getHoursAgo(hour = 0, min = 0, day = 0) {
   return hoursAgo.toISOString();
 }
 
+const delay = (delayInms) => {
+  return new Promise((resolve) => setTimeout(resolve, delayInms));
+};
+
 const data = {
   testnet: [
     {
@@ -1148,6 +1152,7 @@ const data = {
   ],
 };
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
+  await delay(2000);
   res.status(200).json({ code: 200, data });
 }

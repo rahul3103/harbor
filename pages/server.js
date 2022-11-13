@@ -14,7 +14,7 @@ export default function Home({ fallback }) {
 
 const API = `${process.env.DOMAIN}/api/testnets`;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let resp = {};
   try {
     resp = await fetcher(API);
