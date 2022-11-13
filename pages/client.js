@@ -1,10 +1,10 @@
 import { SWRConfig } from "swr";
-import Slider from "../components/Slider";
+import Board from "../components/Board";
 
 export default function Home() {
   return (
     <SWRConfig value={{ revalidateOnFocus: false }}>
-      <Slider />
+      <Board />
     </SWRConfig>
   );
 }

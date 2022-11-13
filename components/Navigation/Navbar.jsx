@@ -1,11 +1,12 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Docs from "../public/icons/docs.svg";
-import CommandSheet from "../public/icons/command_sheet.svg";
-import UserKey from "../public/icons/user_key.svg";
-import Logo from "../public/icons/logo.svg";
-import { classNames } from "../utils/tools";
+import Docs from "../../public/icons/docs.svg";
+import CommandSheet from "../../public/icons/command_sheet.svg";
+import UserKey from "../../public/icons/user_key.svg";
+import Logo from "../../public/icons/logo.svg";
+import { classNames } from "../../utils/tools";
 import ProfileMenu from "./ProfileMenu";
+import NavItem from "./NavItem";
 
 const navigationLeft = [
   { name: "Docs", href: "#", current: false, Icon: Docs },
@@ -41,46 +42,12 @@ export default function NavBar() {
                   <Logo className="h-5.5 w-auto text-white" />
                 </div>
                 <div className="hidden sm:ml-10 sm:block">
-                  <div className="flex space-x-1">
-                    {navigationLeft.map(({ Icon, ...item }) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-175 hover:bg-gray-700 hover:text-white",
-                          "flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        <Icon className="w-3" />
-                        <span className="hidden md:block">{item.name}</span>
-                      </a>
-                    ))}
-                  </div>
+                  <NavItem items={navigationLeft} />
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:pr-0">
                 <div className="mr-5 hidden sm:block">
-                  <div className="flex space-x-1">
-                    {navigationRight.map(({ Icon, ...item }) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-175 hover:bg-gray-700 hover:text-white",
-                          "flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        <Icon className="w-3" />
-                        <span className="hidden md:block">{item.name}</span>
-                      </a>
-                    ))}
-                  </div>
+                  <NavItem items={navigationRight} />
                 </div>
                 <ProfileMenu />
               </div>

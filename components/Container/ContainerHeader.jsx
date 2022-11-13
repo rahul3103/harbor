@@ -1,13 +1,13 @@
 import { Bars3Icon } from "@heroicons/react/20/solid";
 import useSWR from "swr";
-import SelectMenu from "./SelectMenu";
-import fetcher from "../store/fetcher";
-import useMenuStore from "../store/menu";
-import { filterOptions, sortOptions } from "../utils/options";
-import Status from "./Status";
-import Add from "../public/icons/add.svg";
-import { filterCards } from "../utils/tools";
-import HeaderSkeleton from "./HeaderSkeleton";
+import SelectMenu from "../SelectMenu";
+import fetcher from "../../store/fetcher";
+import useMenuStore from "../../store/menu";
+import { filterOptions, sortOptions } from "../../utils/options";
+import Status from "../Status";
+import Add from "../../public/icons/add.svg";
+import { filterCards } from "../../utils/tools";
+import HeaderSkeleton from "../Skeletons/HeaderSkeleton";
 
 function ContainerHeader() {
   const { data, isValidating } = useSWR("/api/testnets", fetcher);

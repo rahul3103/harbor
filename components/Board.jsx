@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Panel from "./Panel";
-import Navbar from "../components/Navbar";
-import Container from "./Container";
+import Navbar from "./Navigation/Navbar";
+import Container from "./Container/Container";
 import useMenuStore from "../store/menu";
 
 export default function Slider() {

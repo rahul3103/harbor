@@ -1,9 +1,9 @@
 import useSWR from "swr";
-import fetcher from "../store/fetcher";
-import Card from "./Card";
-import useMenuStore from "../store/menu";
-import { filterCards, sortCards } from "../utils/tools";
-import CardSkeleton from "./CardSkeleton";
+import fetcher from "../../store/fetcher";
+import Card from "../Card";
+import useMenuStore from "../../store/menu";
+import { filterCards, sortCards } from "../../utils/tools";
+import CardSkeleton from "../Skeletons/CardSkeleton";
 
 function CardList() {
   const { data, isValidating } = useSWR("/api/testnets", fetcher);

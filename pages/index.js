@@ -1,13 +1,13 @@
 import { SWRConfig } from "swr";
 import fetcher from "../store/fetcher";
-import Slider from "../components/Slider";
+import Board from "../components/Board";
 
 export default function Home({ fallback }) {
   return (
     <SWRConfig
       value={{ fallback, revalidateOnMount: false, revalidateOnFocus: false }}
     >
-      <Slider />
+      <Board />
     </SWRConfig>
   );
 }
