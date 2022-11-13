@@ -35,3 +35,7 @@ export function sortCards(cards, value) {
       return firstItem[option.key] < secondItem[option.key] ? 1 : -1;
   });
 }
+
+export function pluralize(count, noun, suffix = "s") {
+  return `${count} ${noun}${count > 1 ? suffix : ""}`;
+}

@@ -3,7 +3,7 @@ import ClockStroke from "../public/icons/clock_stroke.svg";
 import Middot from "../public/icons/middot.svg";
 import Status from "./Status";
 import ImageStacked from "./ImageStacked";
-import { getTimeFrom } from "../utils/tools";
+import { getTimeFrom, pluralize } from "../utils/tools";
 function getCleanName(name) {
   return name.replaceAll(/-|_/gm, " ");
 }
@@ -45,11 +45,11 @@ function Card({ card }) {
       <div className="items-center justify-between space-y-3 md:flex md:space-y-0">
         <div className="flex items-center space-x-3">
           <span className="text-sm font-medium">
-            {card.testnet_off_chain_actors.length} off-chain actors
+            {pluralize(card.testnet_off_chain_actors.length, "off-chain actor")}
           </span>
           <Middot className="h-1 w-1 text-gray-135" />
           <span className="text-sm font-medium">
-            {card.testnet_chains.length} Blockchain
+            {pluralize(card.testnet_chains.length, "Blockchain")}
           </span>
           <ImageStacked stacks={card.testnet_chains} />
         </div>
