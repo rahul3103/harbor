@@ -4,7 +4,7 @@ import Testnets from "../public/icons/testnets.svg";
 import Members from "../public/icons/members.svg";
 import ProjectKey from "../public/icons/project_key.svg";
 import Add from "../public/icons/add.svg";
-import Clone from "../public/icons/clone.svg";
+import Copy from "../public/icons/copy.svg";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import useMenuStore from "../store/menu";
 import Batch from "./Batch";
@@ -70,7 +70,7 @@ function Panel({ onDrawer }) {
               <div className="flex flex-1 items-center gap-1.5">
                 <span>Project Key</span>
               </div>
-              <Clone className="w-4 text-gray-175" />
+              <Copy className="w-4 text-gray-175" />
             </a>
           </li>
         </ul>

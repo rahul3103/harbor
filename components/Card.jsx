@@ -11,6 +11,7 @@ function getCleanName(name) {
 function Card({ card }) {
   let bgColor = "bg-white";
   let borderColor = "border-neutral-200";
+  let shadow = "shadow-card";
   if (card.status === "FAILED") {
     bgColor = "bg-red-350";
     borderColor = "border-red-450";
@@ -18,11 +19,12 @@ function Card({ card }) {
   if (card.status === "KILLED") {
     bgColor = "bg-gray-75";
     borderColor = "border-gray-150";
+    shadow = "";
   }
 
   return (
     <article
-      className={`flex w-full flex-col justify-between space-y-3 rounded-2.5xl border py-4 pl-4 shadow-card md:py-6 md:px-8 ${bgColor} ${borderColor}`}
+      className={`flex w-full flex-col justify-between space-y-3 rounded-2.5xl border py-4 pl-4 md:py-6 md:px-8 ${shadow} ${bgColor} ${borderColor}`}
     >
       <div className="items-center justify-between space-y-3 md:flex md:space-y-0">
         <div className="flex items-center gap-4">
