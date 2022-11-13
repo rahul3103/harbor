@@ -29,7 +29,7 @@ export default function SelectMenu({ options, title, onUpdate, selected }) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-auto z-10 mt-2 w-50 origin-top-right rounded-md border border-gray-150 bg-white p-2 shadow-menu focus:outline-none md:right-0">
+        <Menu.Items className="absolute right-0 z-10 mt-2 w-50 origin-top-right rounded-md border border-gray-150 bg-white p-2 shadow-menu focus:outline-none">
           <div className="space-y-1 py-1 text-center">
             {options?.map((option, index) => (
               <Menu.Item key={option.name || index}>

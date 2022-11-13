@@ -27,7 +27,7 @@ function ContainerHeader() {
   const testnets = data.data.testnet;
 
   return (
-    <div className="items-center justify-between bg-neutral-100 px-2 py-4 md:flex md:px-15 md:pt-10">
+    <div className="flex-wrap items-center justify-between bg-neutral-100 px-2 py-4 md:px-15 md:pt-10 tablet:flex">
       <div className="flex justify-between align-baseline md:space-x-5">
         <h1 className="text-2xl font-bold leading-7 text-black-0">
           {`Testnets (${filterCards(testnets, filtervalue).length})`}
@@ -37,7 +37,7 @@ function ContainerHeader() {
           <span className="font-semibold">New Testnet</span>
         </button>
       </div>
-      <div className="flex items-center justify-between md:space-x-3">
+      <div className="flex flex-col items-center justify-between md:flex-row md:space-x-3">
         <SelectMenu
           selected={filtervalue}
           options={filterOptions.map((option) => (
@@ -46,14 +46,14 @@ function ContainerHeader() {
           onUpdate={updateFilter}
           title="Filter By:"
         />
-        <span className="text-gray-135">&#183;</span>
+        <span className="hidden text-gray-135 md:block">&#183;</span>
         <SelectMenu
           selected={sortValue}
           options={sortOptions}
           onUpdate={updateSort}
           title="Sort By:"
         />
-        <span className="text-gray-135 lg:hidden">&#183;</span>
+        <span className="hidden text-gray-135 md:block lg:hidden">&#183;</span>
         <button
           type="button"
           className="p-2 text-black-555 hover:text-gray-500 lg:hidden"

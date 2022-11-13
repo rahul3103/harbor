@@ -72,6 +72,9 @@ module.exports = {
       minHeight: {
         content: "calc(100vh - 3.75rem)",
       },
+      screens: {
+        tablet: "850px",
+      },
     },
   },
   plugins: [
