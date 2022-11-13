@@ -1,5 +1,6 @@
 import Settings from "../public/icons/settings.svg";
 import ClockStroke from "../public/icons/clock_stroke.svg";
+import Middot from "../public/icons/middot.svg";
 import Status from "./Status";
 import ImageStacked from "./ImageStacked";
 import { getTimeFrom } from "../utils/tools";
@@ -34,7 +35,7 @@ function Card({ card }) {
         </div>
         <div className="flex items-center space-x-4">
           <Status status={card.status} />
-          <span className="text-gray-135">&#183;</span>
+          <Middot className="h-1 w-1 text-gray-135" />
           <button className="flex items-center space-x-1.5 text-sm text-blue-50">
             <Settings className="h-3.5 w-3.5" />
             <span className="text-sm font-medium">Settings</span>
@@ -46,7 +47,7 @@ function Card({ card }) {
           <span className="text-sm font-medium">
             {card.testnet_off_chain_actors.length} off-chain actors
           </span>
-          <span className="text-gray-135">&#183;</span>
+          <Middot className="h-1 w-1 text-gray-135" />
           <span className="text-sm font-medium">
             {card.testnet_chains.length} Blockchain
           </span>

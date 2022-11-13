@@ -6,6 +6,7 @@ import useMenuStore from "../../store/menu";
 import { filterOptions, sortOptions } from "../../utils/options";
 import Status from "../Status";
 import Add from "../../public/icons/add.svg";
+import Middot from "../../public/icons/middot.svg";
 import { filterCards } from "../../utils/tools";
 import HeaderSkeleton from "../Skeletons/HeaderSkeleton";
 
@@ -46,14 +47,14 @@ function ContainerHeader() {
           onUpdate={updateFilter}
           title="Filter By:"
         />
-        <span className="hidden text-gray-135 md:block">&#183;</span>
+        <Middot className="hidden h-1 w-1 text-gray-135 md:block" />
         <SelectMenu
           selected={sortValue}
           options={sortOptions}
           onUpdate={updateSort}
           title="Sort By:"
         />
-        <span className="hidden text-gray-135 md:block lg:hidden">&#183;</span>
+        <Middot className="hidden h-1 w-1 text-gray-135 md:block lg:hidden" />
         <button
           type="button"
           className="p-2 text-black-555 hover:text-gray-500 lg:hidden"
