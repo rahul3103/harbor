@@ -18,8 +18,8 @@ function Panel({ onDrawer }) {
         onDrawer ? "block" : "hidden"
       } sticky top-15 h-content border-r border-solid border-gray-150 bg-white lg:block `}
     >
-      <div className="flex justify-between border-b border-solid border-gray-150 py-1 pr-5">
-        <button className="btn ml-4 gap-3 px-2 text-gray-250">
+      <div className="flex justify-between border-b border-solid border-gray-150 py-1 px-5">
+        <button className="flex items-center gap-3 py-2.5 text-gray-250">
           <LeftArrow className="w-3.5" />
           <span className="text-sm font-semibold normal-case">
             Back to all projects

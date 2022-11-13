@@ -5,6 +5,7 @@ import SelectMenu from "./SelectMenu";
 import fetcher from "../store/fetcher";
 import useMenuStore from "../store/menu";
 import { filterOptions, sortOptions } from "../utils/options";
+import { filterCards } from "../utils/tools";
 import Status from "./Status";
 import Add from "../public/icons/add.svg";
 
@@ -23,11 +24,11 @@ function Container() {
     <section className="bg-neutral-100 pb-4 md:pb-10 lg:col-span-1">
       <div className="bg-neutral-100 px-2 md:px-15">
         <div className="items-center justify-between  pt-4 pb-5 md:flex md:pt-10">
-          <div className="flex justify-between  md:space-x-5">
-            <h1 className="text-2xl font-bold tracking-tight text-black-0">
-              {`Testnets (${testnets.length})`}
+          <div className="flex justify-between align-baseline md:space-x-5">
+            <h1 className="text-2xl font-bold leading-7 text-black-0">
+              {`Testnets (${filterCards(testnets, filtervalue).length})`}
             </h1>
-            <button className="btn flex items-center space-x-2 text-sm text-blue-50">
+            <button className="flex items-center space-x-2 text-sm text-blue-50">
               <Add className="h-3.5 w-3.5" />
               <span className="font-semibold">New Testnet</span>
             </button>

@@ -24,8 +24,8 @@ function Card({ card }) {
       className={`flex w-full flex-col justify-between space-y-3 rounded-2.5xl border py-4 pl-4 shadow-card md:py-6 md:px-8 ${bgColor} ${borderColor}`}
     >
       <div className="items-center justify-between space-y-3 md:flex md:space-y-0">
-        <div className="flex gap-4">
-          <span className="text-xl font-bold capitalize text-black-0">
+        <div className="flex items-center gap-4">
+          <span className="text-xl font-bold capitalize leading-6 text-black-0">
             {getCleanName(card.name)}
           </span>
           <span className="flex items-center rounded-full bg-gray-130 py-0.5 px-3 text-sm font-semibold text-gray-250	">
@@ -35,7 +35,7 @@ function Card({ card }) {
         <div className="flex items-center space-x-4">
           <Status status={card.status} />
           <span className="text-gray-135">&#183;</span>
-          <button className="btn flex items-center space-x-1.5 text-sm text-blue-50">
+          <button className="flex items-center space-x-1.5 text-sm text-blue-50">
             <Settings className="h-3.5 w-3.5" />
             <span className="text-sm font-medium">Settings</span>
           </button>
