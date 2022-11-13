@@ -67,7 +67,10 @@ module.exports = {
         panel: "300px auto",
       },
       height: {
-        content: "calc(100vh - 60px)",
+        content: "calc(100vh - 3.75rem)",
+      },
+      minHeight: {
+        content: "calc(100vh - 3.75rem)",
       },
     },
   },

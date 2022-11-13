@@ -21,7 +21,7 @@ function Container() {
   } = useMenuStore((state) => state);
 
   return (
-    <section className="bg-neutral-100 pb-4 md:pb-10 lg:col-span-1">
+    <section className="min-h-content bg-neutral-100 pb-4 md:h-auto md:pb-10 lg:col-span-1">
       <div className="bg-neutral-100 px-2 md:px-15">
         <div className="items-center justify-between  pt-4 pb-5 md:flex md:pt-10">
           <div className="flex justify-between align-baseline md:space-x-5">
