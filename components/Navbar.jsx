@@ -1,13 +1,12 @@
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
 import Docs from "../public/icons/docs.svg";
 import CommandSheet from "../public/icons/command_sheet.svg";
 import UserKey from "../public/icons/user_key.svg";
-import ArrowDown from "../public/icons/arrow_down.svg";
 import Logo from "../public/icons/logo.svg";
 import { classNames } from "../utils/tools";
+import ProfileMenu from "./ProfileMenu";
+
 const navigationLeft = [
   { name: "Docs", href: "#", current: false, Icon: Docs },
   { name: "Command Cheatsheet", href: "#", current: false, Icon: CommandSheet },
@@ -83,74 +82,7 @@ export default function NavBar() {
                     ))}
                   </div>
                 </div>
-
-                {/* Profile dropdown */}
-                <Menu as="div" className="relative ml-5">
-                  <div>
-                    <Menu.Button className="flex items-center rounded-md bg-black-100 px-4 py-1 text-sm text-gray-175 hover:bg-gray-700 hover:text-white focus:outline-none">
-                      <span className="sr-only">Open user menu</span>
-                      <Image
-                        className="mr-2 h-8 w-8 rounded-full border border-solid border-black-125"
-                        src="/images/dp.jpg"
-                        alt="dp"
-                        width={32}
-                        height={32}
-                      />
-                      <ArrowDown className="w-3" />
-                    </Menu.Button>
-                  </div>
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="ring-black absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
-                          >
-                            Your Profile
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
-                          >
-                            Settings
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
-                          >
-                            Sign out
-                          </a>
-                        )}
-                      </Menu.Item>
-                    </Menu.Items>
-                  </Transition>
-                </Menu>
+                <ProfileMenu />
               </div>
             </div>
           </div>
