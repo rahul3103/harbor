@@ -20,7 +20,7 @@ function ContainerHeader() {
     updateFilter,
     toggleMobileDrawer,
   } = useMenuStore((state) => state);
-  if (!data || data?.message || error)
+  if ((!data || data?.message || error) && !isValidating)
     return (
       <h1 className="mt-10 text-center text-2xl font-bold leading-7 text-black-0">
         Something went wrong
