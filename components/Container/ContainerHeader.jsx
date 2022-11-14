@@ -11,7 +11,8 @@ import { filterCards } from "../../utils/tools";
 import HeaderSkeleton from "../Skeletons/HeaderSkeleton";
 
 function ContainerHeader() {
-  const { data, isValidating } = useSWR("/api/testnets", fetcher);
+  const final = useSWR("/api/testnets", fetcher);
+  const { data, isValidating, error } = final;
   const {
     filtervalue,
     sortValue,
@@ -19,6 +20,12 @@ function ContainerHeader() {
     updateFilter,
     toggleMobileDrawer,
   } = useMenuStore((state) => state);
+  if (!data || data?.message || error)
+    return (
+      <h1 className="mt-10 text-center text-2xl font-bold leading-7 text-black-0">
+        Something went wrong
+      </h1>
+    );
   if (isValidating)
     return (
       <div className="bg-neutral-100 px-2 py-4 md:px-15 md:pt-10">

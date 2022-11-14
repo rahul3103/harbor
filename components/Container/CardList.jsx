@@ -6,9 +6,9 @@ import { filterCards, sortCards } from "../../utils/tools";
 import CardSkeleton from "../Skeletons/CardSkeleton";
 
 function CardList() {
-  const { data, isValidating } = useSWR("/api/testnets", fetcher);
+  const { data, isValidating, error } = useSWR("/api/testnets", fetcher);
   const { filtervalue, sortValue } = useMenuStore((state) => state);
-
+  if (!data || data?.message || error) return null;
   if (isValidating)
     return (
       <div className="space-y-6 px-2 md:px-15">
