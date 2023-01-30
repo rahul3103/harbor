@@ -23,5 +23,3 @@ Client Side Rendered Page : [http://localhost:3000/client](http://localhost:3000
 Even though the design wasn't really efficient, I still tried to make the page responsive. To host the website, I relocated the api to the same repository as the front-end code. In order to display the loader state on client and server side pages, I also added a waiting time of 2 seconds to the API.
 
 Website is also hosted on : [https://harbor-test.vercel.app/](https://harbor-test.vercel.app/)
-
-
